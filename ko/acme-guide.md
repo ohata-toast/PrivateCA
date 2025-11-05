@@ -17,14 +17,14 @@ Certbot은 가장 널리 사용되는 ACME 클라이언트입니다. [Certbot �
 
 **설치 예시 (Ubuntu/Debian):**
 
-```
+```bash
 sudo apt update
 sudo apt install certbot
 ```
 
 **설치 예시 (CentOS/RHEL):**
 
-```
+```bash
 sudo yum install certbot
 ```
 
