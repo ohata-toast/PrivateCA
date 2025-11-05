@@ -207,14 +207,6 @@ renew_before_expiry = 30 days
 2. **Hook 스크립트 존재 확인**: `manual-auth-hook`으로 지정한 스크립트가 여전히 존재하는지 확인합니다.
 3. **수동 갱신 테스트**: `certbot renew --dry-run`으로 실제 갱신 없이 테스트를 수행합니다.
 
-### 로컬 테스트 환경
-
-로컬 테스트 시 사설 루트 인증서 경로를 명시해야 할 수 있습니다.
-
-```bash
-sudo REQUESTS_CA_BUNDLE=$HOME/certs/my-root-ca.pem certbot certonly ...
-```
-
 ## ACME 프로토콜 정보
 
 Private CA에서 제공하는 ACME Directory URL(`/directory`)을 통해 ACME 클라이언트는 필요한 모든 엔드포인트 정보를 자동으로 가져옵니다.
