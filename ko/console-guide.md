@@ -239,21 +239,10 @@ ACME 정보 하단에는 저장소 상세 정보가 표시됩니다.
       - **시그니처 비트**: 인증서 서명에 사용할 해시 알고리즘의 비트 수 선택
 
     - 키 사용 (Key Usage)
-      - **digitalSignature**: 디지털 서명
-      - **keyEncipherment**: 키 암호화
-      - **keyAgreement**: 키 합의
-      - **dataEncipherment**: 데이터 암호화
-      - **nonRepudiation**: 부인 방지
-      - **keyCertSign**: 인증서 서명 (CA용)
-      - **cRLSign**: CRL 서명 (CA용)
+      - digitalSignature (디지털 서명), keyEncipherment (키 암호화), keyCertSign (인증서 서명) 등 인증서 용도를 선택합니다.
 
     - 확장 키 사용 (Extended Key Usage)
-      - **serverAuth**: TLS 서버 인증
-      - **clientAuth**: TLS 클라이언트 인증
-      - **codeSigning**: 코드 서명
-      - **emailProtection**: 이메일 보호
-      - **timeStamping**: 타임스탬프
-      - **ocspSigning**: OCSP 응답 서명
+      - serverAuth (TLS 서버 인증), clientAuth (TLS 클라이언트 인증), codeSigning (코드 서명) 등 확장 키 사용 용도를 선택합니다.
       - **확장 키 사용 OIDs**: 추가 확장 키 사용 OID를 직접 입력할 수 있습니다. (예: 1.3.6.1.5.5.7.3.1, 1.3.6.1.5.5.7.3.2)
 
     - 추가 주체 필드
