@@ -45,6 +45,15 @@ GET /appkeys/{appkey}/cas/{caId}/certs/{certId}/download
 
 - `VIEWER` 이상
 
+<details>
+<summary>요청 예시</summary>
+
+```
+curl -X GET "https://pca.api.nhncloudservice.com/appkeys/my-appkey/cas/1/certs/100/download" \
+  -H "Authorization: Bearer {access_token}"
+```
+</details>
+
 #### 응답
 
 **Response Headers**
@@ -56,18 +65,15 @@ GET /appkeys/{appkey}/cas/{caId}/certs/{certId}/download
 
 인증서 데이터 (PEM 형식)
 
-#### 예제
+<details>
+<summary>응답 예시</summary>
 
-**요청 예제**
-
-        curl -X GET "https://pca.api.nhncloudservice.com/appkeys/my-appkey/cas/1/certs/100/download" \
-          -H "Authorization: Bearer {access_token}"
-
-**응답 예제**
-
-        -----BEGIN CERTIFICATE-----
-        MIIDXTCCAkWgAwIBAgIJAKJ...
-        -----END CERTIFICATE-----
+```
+-----BEGIN CERTIFICATE-----
+MIIDXTCCAkWgAwIBAgIJAKJ...
+-----END CERTIFICATE-----
+```
+</details>
 
 ## CRL API
 
@@ -99,18 +105,20 @@ GET /appkeys/{appkey}/cas/{caId}/certs/{signedCertificateId}/crl
 
 **Response Body**
 
-        {
-          "header": {
-            "resultCode": 0,
-            "resultMessage": "SUCCESS",
-            "isSuccessful": true
-          },
-          "body": {
-            "crlPem": "-----BEGIN X509 CRL-----\n...\n-----END X509 CRL-----",
-            "thisUpdate": "2024-01-01 00:00:00",
-            "nextUpdate": "2024-01-08 00:00:00"
-          }
-        }
+```json
+{
+  "header": {
+    "resultCode": 0,
+    "resultMessage": "SUCCESS",
+    "isSuccessful": true
+  },
+  "body": {
+    "crlPem": "-----BEGIN X509 CRL-----\n...\n-----END X509 CRL-----",
+    "thisUpdate": "2024-01-01 00:00:00",
+    "nextUpdate": "2024-01-08 00:00:00"
+  }
+}
+```
 
 | 필드 | 타입 | 설명 |
 |------|------|------|
@@ -140,6 +148,15 @@ GET /appkeys/{appkey}/cas/{caId}/certs/{signedCertificateId}/crl/der
 
 - 권한 체크 없음 (공개 엔드포인트)
 
+<details>
+<summary>요청 예시</summary>
+
+```
+curl -X GET "https://pca.api.nhncloudservice.com/appkeys/my-appkey/cas/1/certs/100/crl/der" \
+  -o crl.crl
+```
+</details>
+
 #### 응답
 
 **Response Headers**
@@ -150,13 +167,6 @@ GET /appkeys/{appkey}/cas/{caId}/certs/{signedCertificateId}/crl/der
 **Response Body**
 
 CRL 데이터 (DER 형식)
-
-#### 예제
-
-**요청 예제**
-
-        curl -X GET "https://pca.api.nhncloudservice.com/appkeys/my-appkey/cas/1/certs/100/crl/der" \
-          -o crl.crl
 
 ### CRL 다운로드 (PEM 형식)
 
@@ -180,6 +190,16 @@ GET /appkeys/{appkey}/cas/{caId}/certs/{signedCertificateId}/crl/pem
 
 - `VIEWER` 이상
 
+<details>
+<summary>요청 예시</summary>
+
+```
+curl -X GET "https://pca.api.nhncloudservice.com/appkeys/my-appkey/cas/1/certs/100/crl/pem" \
+  -H "Authorization: Bearer {access_token}" \
+  -o crl.pem
+```
+</details>
+
 #### 응답
 
 **Response Headers**
@@ -190,14 +210,6 @@ GET /appkeys/{appkey}/cas/{caId}/certs/{signedCertificateId}/crl/pem
 **Response Body**
 
 CRL 데이터 (PEM 형식)
-
-#### 예제
-
-**요청 예제**
-
-        curl -X GET "https://pca.api.nhncloudservice.com/appkeys/my-appkey/cas/1/certs/100/crl/pem" \
-          -H "Authorization: Bearer {access_token}" \
-          -o crl.pem
 
 ### CRL 수동 갱신
 
@@ -221,25 +233,29 @@ POST /appkeys/{appkey}/cas/{caId}/certs/{signedCertificateId}/crl
 
 - `ADMIN`
 
+<details>
+<summary>요청 예시</summary>
+
+```
+curl -X POST "https://pca.api.nhncloudservice.com/appkeys/my-appkey/cas/1/certs/100/crl" \
+  -H "Authorization: Bearer {access_token}"
+```
+</details>
+
 #### 응답
 
 **Response Body**
 
-        {
-          "header": {
-            "resultCode": 0,
-            "resultMessage": "SUCCESS",
-            "isSuccessful": true
-          },
-          "body": true
-        }
-
-#### 예제
-
-**요청 예제**
-
-        curl -X POST "https://pca.api.nhncloudservice.com/appkeys/my-appkey/cas/1/certs/100/crl" \
-          -H "Authorization: Bearer {access_token}"
+```json
+{
+  "header": {
+    "resultCode": 0,
+    "resultMessage": "SUCCESS",
+    "isSuccessful": true
+  },
+  "body": true
+}
+```
 
 ## OCSP API
 
@@ -267,6 +283,18 @@ GET /appkeys/{appkey}/cas/{caId}/ocsp/{ocspRequestBase64}
 
 - 권한 체크 없음 (공개 엔드포인트)
 
+<details>
+<summary>요청 예시</summary>
+
+```bash
+# OCSP 요청 생성 및 Base64 인코딩
+OCSP_REQUEST=$(openssl ocsp -issuer ca.pem -cert cert.pem -reqout - | base64 -w 0)
+
+# URL 인코딩된 요청 전송
+curl -X GET "https://pca.api.nhncloudservice.com/appkeys/my-appkey/cas/1/ocsp/${OCSP_REQUEST}"
+```
+</details>
+
 #### 응답
 
 **Response Headers**
@@ -276,16 +304,6 @@ GET /appkeys/{appkey}/cas/{caId}/ocsp/{ocspRequestBase64}
 **Response Body**
 
 OCSP 응답 (DER 형식)
-
-#### 예제
-
-**요청 예제**
-
-        # OCSP 요청 생성 및 Base64 인코딩
-        OCSP_REQUEST=$(openssl ocsp -issuer ca.pem -cert cert.pem -reqout - | base64 -w 0)
-
-        # URL 인코딩된 요청 전송
-        curl -X GET "https://pca.api.nhncloudservice.com/appkeys/my-appkey/cas/1/ocsp/${OCSP_REQUEST}"
 
 ### OCSP 상태 조회 (POST)
 
@@ -316,6 +334,24 @@ POST /appkeys/{appkey}/cas/{caId}/ocsp
 
 OCSP 요청 (DER 형식)
 
+<details>
+<summary>요청 예시</summary>
+
+```bash
+# OCSP 요청 생성
+openssl ocsp -issuer ca.pem -cert cert.pem -reqout ocsp-request.der
+
+# OCSP 요청 전송
+curl -X POST "https://pca.api.nhncloudservice.com/appkeys/my-appkey/cas/1/ocsp" \
+  -H "Content-Type: application/ocsp-request" \
+  --data-binary @ocsp-request.der \
+  -o ocsp-response.der
+
+# OCSP 응답 확인
+openssl ocsp -respin ocsp-response.der -text
+```
+</details>
+
 #### 응답
 
 **Response Headers**
@@ -325,22 +361,6 @@ OCSP 요청 (DER 형식)
 **Response Body**
 
 OCSP 응답 (DER 형식)
-
-#### 예제
-
-**요청 예제**
-
-        # OCSP 요청 생성
-        openssl ocsp -issuer ca.pem -cert cert.pem -reqout ocsp-request.der
-
-        # OCSP 요청 전송
-        curl -X POST "https://pca.api.nhncloudservice.com/appkeys/my-appkey/cas/1/ocsp" \
-          -H "Content-Type: application/ocsp-request" \
-          --data-binary @ocsp-request.der \
-          -o ocsp-response.der
-
-        # OCSP 응답 확인
-        openssl ocsp -respin ocsp-response.der -text
 
 ## CRL vs OCSP
 
@@ -363,27 +383,29 @@ OCSP 응답 (DER 형식)
 #### 요청
 
 ```
-GET /appkeys/{appkey}/cas/{caId}/certs/{certId}
+GET /appkeys/my-appkey/cas/1/certs/100
 ```
 
-#### 응답 예제
+#### 응답
 
-        {
-          "header": {
-            "resultCode": 0,
-            "resultMessage": "SUCCESS",
-            "isSuccessful": true
-          },
-          "body": {
-            "certificateId": 100,
-            "name": "My Certificate",
-            "commonName": "example.com",
-            "serialNumber": "1A2B3C4D",
-            ...
-            "crlUrl": "https://pca.api.nhncloudservice.com/appkeys/my-appkey/cas/1/certs/100/crl/der",
-            "ocspUrl": "https://pca.api.nhncloudservice.com/appkeys/my-appkey/cas/1/ocsp"
-          }
-        }
+```json
+{
+  "header": {
+    "resultCode": 0,
+    "resultMessage": "SUCCESS",
+    "isSuccessful": true
+  },
+  "body": {
+    "certificateId": 100,
+    "name": "My Certificate",
+    "commonName": "example.com",
+    "serialNumber": "1A2B3C4D",
+    ...
+    "crlUrl": "https://pca.api.nhncloudservice.com/appkeys/my-appkey/cas/1/certs/100/crl/der",
+    "ocspUrl": "https://pca.api.nhncloudservice.com/appkeys/my-appkey/cas/1/ocsp"
+  }
+}
+```
 
 !!! tip "알아두기"
     이 URL들은 인증서에 포함되는 Extension 정보로, 클라이언트가 인증서 검증 시 자동으로 참조합니다.
