@@ -21,6 +21,13 @@ X-NHN-Authorization: Bearer {access_token}
     - 인증 헤더에 필요한 인증 토큰에 대한 자세한 사항은 [여기](https://docs.nhncloud.com/ko/nhncloud/ko/public-api/api-authentication/)에서 자세히 확인하실 수 있습니다.
     - 앱키(appkey)는 콘솔에서 확인할 수 있으며, 모든 API 경로에 포함되어야 합니다.
 
+### 인증서 형식
+
+Private CA API에서 사용하는 주요 인증서 형식은 다음과 같습니다.
+
+- **PEM (Privacy Enhanced Mail)**: 텍스트 기반 인증서 형식으로, Base64로 인코딩되어 있으며 `-----BEGIN CERTIFICATE-----`로 시작합니다. 사람이 읽을 수 있고 편집이 쉽습니다.
+- **DER (Distinguished Encoding Rules)**: 바이너리 형식의 인증서로, PEM보다 파일 크기가 작고 효율적입니다. 주로 Java 애플리케이션에서 사용됩니다.
+
 ## 인증서 다운로드 API
 
 ### 인증서 다운로드
@@ -38,8 +45,8 @@ GET /appkeys/{appkey}/cas/{caId}/certs/{certId}/download
 | 이름 | 타입 | 필수 | 설명 |
 |------|------|------|------|
 | appkey | String | Y | 앱키 |
-| caId | Long | Y | 저장소 아이디 |
-| certId | Long | Y | 인증서 아이디 |
+| caId | Long | Y | 저장소 ID |
+| certId | Long | Y | 인증서 ID |
 
 **필요 권한**
 
@@ -94,8 +101,8 @@ GET /appkeys/{appkey}/cas/{caId}/certs/{signedCertificateId}/crl
 | 이름 | 타입 | 필수 | 설명 |
 |------|------|------|------|
 | appkey | String | Y | 앱키 |
-| caId | Long | Y | 저장소 아이디 |
-| signedCertificateId | Long | Y | 서명된 인증서 아이디 |
+| caId | Long | Y | 저장소 ID |
+| signedCertificateId | Long | Y | 서명된 인증서 ID |
 
 **필요 권한**
 
@@ -141,8 +148,8 @@ GET /appkeys/{appkey}/cas/{caId}/certs/{signedCertificateId}/crl/der
 | 이름 | 타입 | 필수 | 설명 |
 |------|------|------|------|
 | appkey | String | Y | 앱키 |
-| caId | Long | Y | 저장소 아이디 |
-| signedCertificateId | Long | Y | 서명된 인증서 아이디 |
+| caId | Long | Y | 저장소 ID |
+| signedCertificateId | Long | Y | 서명된 인증서 ID |
 
 **필요 권한**
 
@@ -183,8 +190,8 @@ GET /appkeys/{appkey}/cas/{caId}/certs/{signedCertificateId}/crl/pem
 | 이름 | 타입 | 필수 | 설명 |
 |------|------|------|------|
 | appkey | String | Y | 앱키 |
-| caId | Long | Y | 저장소 아이디 |
-| signedCertificateId | Long | Y | 서명된 인증서 아이디 |
+| caId | Long | Y | 저장소 ID |
+| signedCertificateId | Long | Y | 서명된 인증서 ID |
 
 **필요 권한**
 
@@ -226,8 +233,8 @@ POST /appkeys/{appkey}/cas/{caId}/certs/{signedCertificateId}/crl
 | 이름 | 타입 | 필수 | 설명 |
 |------|------|------|------|
 | appkey | String | Y | 앱키 |
-| caId | Long | Y | 저장소 아이디 |
-| signedCertificateId | Long | Y | 서명된 인증서 아이디 |
+| caId | Long | Y | 저장소 ID |
+| signedCertificateId | Long | Y | 서명된 인증서 ID |
 
 **필요 권한**
 
@@ -276,7 +283,7 @@ GET /appkeys/{appkey}/cas/{caId}/ocsp/{ocspRequestBase64}
 | 이름 | 타입 | 필수 | 설명 |
 |------|------|------|------|
 | appkey | String | Y | 앱키 |
-| caId | Long | Y | 저장소 아이디 |
+| caId | Long | Y | 저장소 ID |
 | ocspRequestBase64 | String | Y | Base64로 인코딩된 OCSP 요청 |
 
 **필요 권한**
@@ -320,7 +327,7 @@ POST /appkeys/{appkey}/cas/{caId}/ocsp
 | 이름 | 타입 | 필수 | 설명 |
 |------|------|------|------|
 | appkey | String | Y | 앱키 |
-| caId | Long | Y | 저장소 아이디 |
+| caId | Long | Y | 저장소 ID |
 
 **필요 권한**
 
@@ -440,7 +447,7 @@ GET /appkeys/my-appkey/cas/1/certs/100
 ### OCSP 응답이 없는 경우
 
 1. 콘솔의 저장소 상세정보에서 OCSP가 활성화 되었는지 확인합니다.
-2. 올바른 저장소 아이디를 사용하는지 확인합니다.
+2. 올바른 저장소 ID를 사용하는지 확인합니다.
 3. OCSP 요청이 올바른 형식(DER)인지 확인합니다.
 
 ### 인증서에 CRL/OCSP URL이 없는 경우

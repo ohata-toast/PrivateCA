@@ -3,13 +3,24 @@ Private CA 서비스는 ACME(Automatic Certificate Management Environment) 프�
 
 본 가이드에서는 Private CA ACME 서버를 이용하여 Certbot으로 인증서를 발급하는 방법을 안내합니다.
 
+!!! tip "알아두기"
+    - **ACME (Automatic Certificate Management Environment)**: 인증서 발급과 갱신을 자동화하는 표준 프로토콜입니다.
+    - **Certbot**: Let's Encrypt에서 개발한 ACME 클라이언트 도구로, 인증서를 자동으로 발급하고 갱신합니다.
+    - **Base 인증서**: ACME 자동 갱신 시 참조하는 템플릿 역할의 인증서입니다.
+    - **CSR (Certificate Signing Request)**: 인증서 발급을 요청하기 위한 서명 요청 파일입니다.
+    - **EAB (External Account Binding)**: ACME 서버에 인증하기 위한 계정 바인딩 정보입니다.
+
 ## 사전 준비
 
 ACME를 통한 인증서 발급을 시작하기 전에 다음 사항을 준비해야 합니다.
 
 ### 1. Base 인증서 발급
 
-콘솔에서 기본 인증서(Base 인증서)를 미리 발급받아 두어야 합니다. Base 인증서는 ACME 서버가 인증서를 발급할 때 사용하는 기본 인증서입니다.
+Base 인증서는 ACME 서버가 자동 갱신 시 참조하는 "템플릿" 역할을 합니다.
+
+- Base 인증서에 설정된 도메인(CN, SAN)과 동일한 도메인의 인증서만 ACME를 통해 갱신할 수 있습니다.
+- Base 인증서는 콘솔에서 일반적인 인증서 발급 절차로 생성합니다.
+- Base 인증서를 발급받은 후, 해당 인증서의 ID를 ACME Directory URL에 사용합니다.
 
 ### 2. Certbot 설치
 
@@ -33,7 +44,7 @@ sudo yum install certbot
 Private CA 콘솔에서 다음 정보를 확인합니다.
 
 - **ACME Directory URL**: `https://kr1-pca.api.nhncloudservice.com/acme/cert/{certId}/directory`
-- **ACME 토큰 아이디**: 콘솔에서 발급한 ACME 토큰 아이디 (**YOUR_ACME_TOKEN_ID**)
+- **ACME 토큰 ID**: 콘솔에서 발급한 ACME 토큰 ID (**YOUR_ACME_TOKEN_ID**)
 - **ACME HMAC 키**: 콘솔에서 발급한 ACME 토큰 HMAC 키 (**YOUR_ACME_TOKEN_HMAC_KEY**)
 
 ## 인증서 갱신하기
@@ -70,8 +81,8 @@ certbot certonly \
 | `--preferred-challenges` | Challenge 방식을 지정합니다 (`http`, `dns`, `tls-alpn`). 일반적으로 `http`를 사용합니다. | O | - |
 | `--server` | ACME 서버의 Directory URL을 지정합니다. | O | - |
 | `-d` | 인증서에 포함할 도메인을 지정합니다. Base 인증서의 CN과 SAN을 콘솔에서 확인하여 정확히 입력해야 합니다. | O | - |
-| `--eab-kid` | External Account Binding의 Key ID입니다. | O | - |
-| `--eab-hmac-key` | EAB HMAC 키 (Base64 인코딩)입니다. | O | - |
+| `--eab-kid` | External Account Binding의 Key ID입니다. Private CA에서 발급한 ACME 토큰 ID를 입력합니다. | O | - |
+| `--eab-hmac-key` | EAB HMAC 키 (Base64 인코딩)입니다. Private CA에서 발급한 ACME 토큰 HMAC 키를 입력합니다. | O | - |
 | `--key-type` | 개인키 유형 (`rsa`, `ec`)을 지정합니다. | X | rsa |
 | `--rsa-key-size` | RSA 키 길이를 지정합니다. | X | 2048 |
 | `--elliptic-curve` | ECDSA 키 곡선을 지정합니다. | X | secp256r1 |
