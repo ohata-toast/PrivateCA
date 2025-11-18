@@ -69,7 +69,7 @@ certbot certonly \
 | `--deploy-hook` | 인증서 발급 성공 후 실행할 스크립트를 지정합니다. 인증서 이동, 배포 등의 후처리에 사용합니다. | X | - |
 | `--preferred-challenges` | Challenge 방식을 지정합니다 (`http`, `dns`, `tls-alpn`). 일반적으로 `http`를 사용합니다. | O | - |
 | `--server` | ACME 서버의 Directory URL을 지정합니다. | O | - |
-| `-d` | 인증서에 포함할 도메인을 지정합니다. CN과 SAN을 모두 지정해야 합니다. | O | - |
+| `-d` | 인증서에 포함할 도메인을 지정합니다. Base 인증서의 CN과 SAN을 콘솔에서 확인하여 정확히 입력해야 합니다. | O | - |
 | `--eab-kid` | External Account Binding의 Key ID입니다. | O | - |
 | `--eab-hmac-key` | EAB HMAC 키 (Base64 인코딩)입니다. | O | - |
 | `--key-type` | 개인키 유형 (`rsa`, `ec`)을 지정합니다. | X | rsa |
@@ -77,6 +77,9 @@ certbot certonly \
 | `--elliptic-curve` | ECDSA 키 곡선을 지정합니다. | X | secp256r1 |
 | `--agree-tos` | 서비스 약관에 자동으로 동의합니다. 인터랙티브 입력을 방지합니다. | X | - |
 | `--register-unsafely-without-email` | 이메일 없이 계정을 등록합니다. | X | - |
+
+!!! danger "주의"
+    도메인 지정 시 Base 인증서에 설정된 CN(Common Name)과 도메인 SAN(Subject Alternative Name)을 정확히 입력해야 합니다. 인증서 발급 전 콘솔에서 Base 인증서의 CN과 SAN 정보를 확인하여 `-d` 옵션에 올바른 도메인을 지정했는지 반드시 검증하십시오.
 
 ### Hook 스크립트 예시
 

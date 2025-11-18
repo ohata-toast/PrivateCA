@@ -48,7 +48,7 @@ GET /appkeys/{appkey}/cas/{caId}/certs/{certId}/download
 <details>
 <summary>요청 예시</summary>
 
-```
+```sh
 curl -X GET "https://pca.api.nhncloudservice.com/appkeys/my-appkey/cas/1/certs/100/download" \
   -H "Authorization: Bearer {access_token}"
 ```
@@ -151,7 +151,7 @@ GET /appkeys/{appkey}/cas/{caId}/certs/{signedCertificateId}/crl/der
 <details>
 <summary>요청 예시</summary>
 
-```
+```sh
 curl -X GET "https://pca.api.nhncloudservice.com/appkeys/my-appkey/cas/1/certs/100/crl/der" \
   -o crl.crl
 ```
@@ -193,7 +193,7 @@ GET /appkeys/{appkey}/cas/{caId}/certs/{signedCertificateId}/crl/pem
 <details>
 <summary>요청 예시</summary>
 
-```
+```sh
 curl -X GET "https://pca.api.nhncloudservice.com/appkeys/my-appkey/cas/1/certs/100/crl/pem" \
   -H "Authorization: Bearer {access_token}" \
   -o crl.pem
@@ -236,7 +236,7 @@ POST /appkeys/{appkey}/cas/{caId}/certs/{signedCertificateId}/crl
 <details>
 <summary>요청 예시</summary>
 
-```
+```sh
 curl -X POST "https://pca.api.nhncloudservice.com/appkeys/my-appkey/cas/1/certs/100/crl" \
   -H "Authorization: Bearer {access_token}"
 ```
@@ -286,7 +286,7 @@ GET /appkeys/{appkey}/cas/{caId}/ocsp/{ocspRequestBase64}
 <details>
 <summary>요청 예시</summary>
 
-```bash
+```sh
 # OCSP 요청 생성 및 Base64 인코딩
 OCSP_REQUEST=$(openssl ocsp -issuer ca.pem -cert cert.pem -reqout - | base64 -w 0)
 
@@ -337,7 +337,7 @@ OCSP 요청 (DER 형식)
 <details>
 <summary>요청 예시</summary>
 
-```bash
+```sh
 # OCSP 요청 생성
 openssl ocsp -issuer ca.pem -cert cert.pem -reqout ocsp-request.der
 
