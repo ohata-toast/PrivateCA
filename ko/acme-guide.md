@@ -83,9 +83,9 @@ certbot certonly \
 | `-d` | 인증서에 포함할 도메인을 지정합니다. Base 인증서의 CN과 SAN을 콘솔에서 확인하여 정확히 입력해야 합니다. | O | - |
 | `--eab-kid` | External Account Binding의 Key ID입니다. Private CA에서 발급한 ACME 토큰 ID를 입력합니다. | O | - |
 | `--eab-hmac-key` | EAB HMAC 키 (Base64 인코딩)입니다. Private CA에서 발급한 ACME 토큰 HMAC 키를 입력합니다. | O | - |
-| `--key-type` | 개인키 유형 (`rsa`, `ec`)을 지정합니다. | X | rsa |
-| `--rsa-key-size` | RSA 키 길이를 지정합니다. | X | 2048 |
-| `--elliptic-curve` | ECDSA 키 곡선을 지정합니다. | X | secp256r1 |
+| `--key-type` | 개인키 유형 (`rsa`, `ecdsa`)을 지정합니다. | X | rsa |
+| `--rsa-key-size` | RSA 키 길이를 지정합니다. `--key-type rsa`일 경우에만 사용하며, `2048`, `3072`, `4096` 값을 사용할 수 있습니다. | X | 2048 |
+| `--elliptic-curve` | ECDSA 키 곡선을 지정합니다. `--key-type ecdsa`일 경우에만 사용하며, `secp256r1`, `secp384r1`, `secp521r1` 값을 사용할 수 있습니다. | X | secp256r1 |
 | `--agree-tos` | 서비스 약관에 자동으로 동의합니다. 인터랙티브 입력을 방지합니다. | X | - |
 | `--register-unsafely-without-email` | 이메일 없이 계정을 등록합니다. | X | - |
 

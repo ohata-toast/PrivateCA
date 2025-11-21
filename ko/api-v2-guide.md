@@ -308,6 +308,17 @@ GET /appkeys/{appkey}/cas/{caId}/ocsp/{ocspRequestBase64}
 | caId | Long | Y | 저장소 ID |
 | ocspRequestBase64 | String | Y | Base64로 인코딩된 OCSP 요청 |
 
+!!! danger "주의"
+    OCSP 요청을 Base64로 인코딩할 때는 URL-safe 형태로 변환해야 합니다.
+
+    - 표준 Base64 인코딩 후 다음 문자들을 변환합니다:
+        - `+` → `-` (plus를 hyphen으로)
+        - `/` → `_` (slash를 underscore로)
+    - Padding 문자(`=`)는 제거합니다.
+    - 예시:
+        - 변환 전: `MEow/SDAwL+oGCC+sGAQUF/BzAh==`
+        - 변환 후: `MEow_SDAwL-oGCC-sGAQUF_BzAh` (`+` → `-`, `/` → `_`, `=` 제거)
+
 **필요 권한**
 
 - 권한 체크 없음 (공개 엔드포인트)
