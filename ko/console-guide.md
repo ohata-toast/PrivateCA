@@ -2,7 +2,7 @@
 **Management > Private CA > 콘솔 사용 가이드**
 시작하기에서는 Private CA를 사용하는 데 필요한 기본적인 내용을 설명합니다.
 
-Private CA 콘솔은 인증 기관(Certificate Authority, CA)을 중심으로 구성되어 있으며, 모든 리소스(인증서 템플릿, 발급자, 인증서, ACME 토큰)는 특정 저장소에 속합니다. 콘솔 화면은 왼쪽에 저장소 목록, 오른쪽에 선택한 저장소의 상세 정보를 표시하는 탭 구조로 되어 있습니다.
+Private CA 콘솔은 인증 기관(certificate authority, CA)을 중심으로 구성되어 있으며, 모든 리소스(인증서 템플릿, 발급자, 인증서, ACME 토큰)는 특정 저장소에 속합니다. 콘솔 화면은 왼쪽에 저장소 목록, 오른쪽에 선택한 저장소의 상세 정보를 표시하는 탭 구조로 되어 있습니다.
 
 ## Private CA 사용 흐름
 
@@ -34,11 +34,11 @@ Private CA에서 인증서를 발급 받기까지의 과정은 다음과 같습�
   - **저장소 이름**(필수): 저장소를 식별할 이름을 입력합니다.
   - **저장소 설명**(선택): 저장소에 대한 설명을 입력합니다.
   - **CRL 활성화**
-    - CRL(Certificate Revocation List, 인증서 폐기 목록) 활성화 여부를 선택합니다.
+    - CRL(certificate revocation list, 인증서 폐기 목록) 활성화 여부를 선택합니다.
     - 폐기된 인증서 목록을 주기적으로 제공하여 클라이언트가 인증서 유효성을 확인할 수 있습니다.
     - CRL을 활성화하면 갱신 주기를 일 단위로 설정할 수 있습니다.
   - **OCSP 활성화**
-    - OCSP(Online Certificate Status Protocol) 활성화 여부를 선택합니다.
+    - OCSP(online certificate status protocol) 활성화 여부를 선택합니다.
     - 개별 인증서의 폐기 상태를 요청 시점의 상태로 빠르게 확인할 수 있는 프로토콜입니다.
     - OCSP를 활성화하면 갱신 주기를 시간 단위로 설정할 수 있습니다.
 
@@ -98,9 +98,9 @@ ACME 정보 하단에는 저장소 상세 정보가 표시됩니다.
 ![overview_detail](../pca_images/overview_detail.png)
 
 - **저장소 ID**: 저장소의 ID
-- **CRL URL**: 인증서 폐기 목록(Certificate Revocation List)을 확인할 수 있는 URL
+- **CRL URL**: 인증서 폐기 목록(certificate revocation list)을 확인할 수 있는 URL
 - **CRL 갱신 주기**: CRL이 갱신되는 주기(일 단위)
-- **OCSP URL**: OCSP(Online Certificate Status Protocol) 응답자 URL
+- **OCSP URL**: OCSP(online certificate status protocol) 응답자 URL
 - **OCSP 갱신 주기**: OCSP 정보가 갱신되는 주기(시간 단위)
 
 !!! tip "알아두기"

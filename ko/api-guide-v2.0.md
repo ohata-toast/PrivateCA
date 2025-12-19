@@ -88,7 +88,7 @@ GET /v2.0/appkeys/{appkey}/cas/{caId}/certs/{certId}/download
 
 ## CRL API
 
-CRL(Certificate Revocation List)은 특정 발급자가 발급한 인증서 중 폐기된 인증서의 목록을 제공하는 메커니즘입니다. 클라이언트는 CRL을 다운로드하여 인증서가 폐기되었는지 확인할 수 있습니다.
+CRL(certificate revocation list)은 특정 발급자가 발급한 인증서 중 폐기된 인증서의 목록을 제공하는 메커니즘입니다. 클라이언트는 CRL을 다운로드하여 인증서가 폐기되었는지 확인할 수 있습니다.
 
 ### CRL 정보 조회
 
@@ -242,7 +242,7 @@ POST /v2.0/appkeys/{appkey}/cas/{caId}/certs/{issuerCertId}/crl
 
 ## OCSP API
 
-OCSP(Online Certificate Status Protocol)는 개별 인증서의 폐기 상태를 빠르게 확인할 수 있는 프로토콜입니다. CRL과 달리 전체 목록을 다운로드하지 않고 특정 인증서의 상태만 요청 시점에 조회할 수 있습니다.
+OCSP(online certificate status protocol)는 개별 인증서의 폐기 상태를 빠르게 확인할 수 있는 프로토콜입니다. CRL과 달리 전체 목록을 다운로드하지 않고 특정 인증서의 상태만 요청 시점에 조회할 수 있습니다.
 
 ### OCSP 상태 조회(GET)
 
