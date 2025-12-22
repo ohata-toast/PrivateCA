@@ -9,7 +9,7 @@ NHN Cloud Private CA API를 사용하여 인증서를 프로그래밍 방식으�
 
 | 리전 | 엔드포인트 |
 | --- | --- |
-| KR1 | https://pca.api.nhncloudservice.com |
+| KR1 | https://kr1-pca.api.nhncloudservice.com |
 
 ### API 목록
 
@@ -285,7 +285,7 @@ GET /v2.0/appkeys/{appkey}/cas/{caId}/ocsp/{ocspRequestBase64}
 OCSP_REQUEST=$(openssl ocsp -issuer ca.pem -cert cert.pem -reqout - | base64 -w 0)
 
 # URL 인코딩된 요청 전송
-curl -X GET "https://pca.api.nhncloudservice.com/v2.0/appkeys/my-appkey/cas/1/ocsp/${OCSP_REQUEST}"
+curl -X GET "https://kr1-pca.api.nhncloudservice.com/v2.0/appkeys/my-appkey/cas/1/ocsp/${OCSP_REQUEST}"
 ```
 
 #### 응답
@@ -334,7 +334,7 @@ OCSP 요청(DER 형식)
 openssl ocsp -issuer ca.pem -cert cert.pem -reqout ocsp-request.der
 
 # OCSP 요청 전송
-curl -X POST "https://pca.api.nhncloudservice.com/v2.0/appkeys/my-appkey/cas/1/ocsp" \
+curl -X POST "https://kr1-pca.api.nhncloudservice.com/v2.0/appkeys/my-appkey/cas/1/ocsp" \
   -H "Content-Type: application/ocsp-request" \
   --data-binary @ocsp-request.der \
   -o ocsp-response.der
