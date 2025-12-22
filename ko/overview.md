@@ -29,7 +29,7 @@ Private CA는 조직 내부에서 사용하는 인증서를 직접 발급하고 
 
 Private CA 서비스는 다음과 같은 구성 요소로 이루어져 있습니다.
 
-![Private CA 서비스 구조](../pca_images/NHN Cloud_PrivateCA_overview_ko_900.png)
+![Private CA 서비스 구조](https://static.toastoven.net/prod_privateca/2025-12-23_ko/NHN%20Cloud_PrivateCA_overview_ko_900.png)
 
 ### 저장소
 - Private CA를 관리하는 기본 단위입니다.

@@ -26,10 +26,10 @@ Private CA에서 인증서를 발급 받기까지의 과정은 다음과 같습�
 ### 저장소 추가
 
 1. 콘솔 왼쪽 상단의 **+ 추가**를 클릭해서 저장소를 추가합니다.
-  ![ca_empty_list](../pca_images/ca_init.png)
+  ![ca_empty_list](https://static.toastoven.net/prod_privateca/2025-12-23_ko/ca_init.png)
 
 2. 저장소 추가 모달 창에서 다음 정보를 입력합니다.
-  ![ca_create](../pca_images/ca_create.png)
+  ![ca_create](https://static.toastoven.net/prod_privateca/2025-12-23_ko/ca_create.png)
     - **저장소 이름**(필수): 저장소를 식별할 이름을 입력합니다.
     - **저장소 설명**(선택): 저장소에 대한 설명을 입력합니다.
     - **CRL 활성화**
@@ -46,7 +46,7 @@ Private CA에서 인증서를 발급 받기까지의 과정은 다음과 같습�
 ### 저장소 수정, 삭제
 
 저장소 목록에서 각 저장소 항목의 오른쪽에 있는 메뉴 버튼(⋮)을 클릭하면 다음 작업을 수행할 수 있습니다.
-![overview_3dot](../pca_images/overview_3dot.png)
+![overview_3dot](https://static.toastoven.net/prod_privateca/2025-12-23_ko/overview_3dot.png)
 
 - **수정**: 저장소의 이름, 설명, CRL/OCSP 설정을 변경할 수 있습니다.
 - **삭제**: 저장소를 삭제합니다.
@@ -62,7 +62,7 @@ Private CA에서 인증서를 발급 받기까지의 과정은 다음과 같습�
 #### 탭 목록
 
 저장소를 선택하면 우측 화면 상단에는 다음과 같은 탭이 있으며, 각 탭을 클릭하여 해당 기능으로 이동할 수 있습니다.
-![overview_tabs](../pca_images/overview_tabs.png)
+![overview_tabs](https://static.toastoven.net/prod_privateca/2025-12-23_ko/overview_tabs.png)
 
 - **개요**: 저장소의 통계 정보와 설정 정보
 - **인증서 템플릿**: 인증서 템플릿 목록 및 관리
@@ -74,7 +74,7 @@ Private CA에서 인증서를 발급 받기까지의 과정은 다음과 같습�
 #### 리소스 통계 카드
 
 화면 상단에는 저장소의 주요 리소스 수를 표시하는 카드가 3개 나타납니다.
-![overview_resource_card](../pca_images/overview_resource_card.png)
+![overview_resource_card](https://static.toastoven.net/prod_privateca/2025-12-23_ko/overview_resource_card.png)
 
 - **인증서 템플릿**: 생성된 인증서 템플릿 총 개수
 - **발급자**: 생성된 발급자(Root CA, Intermediate CA) 총 개수
@@ -85,7 +85,7 @@ Private CA에서 인증서를 발급 받기까지의 과정은 다음과 같습�
 #### ACME 정보
 
 리소스 카드 하단에는 ACME 정보가 표시됩니다.
-![overview_acme_info](../pca_images/overview_acme_info.png)
+![overview_acme_info](https://static.toastoven.net/prod_privateca/2025-12-23_ko/overview_acme_info.png)
 
 - **전체 토큰**: 생성된 ACME 토큰 총 개수
 - **활성 토큰**: 활성 상태의 ACME 토큰 개수
@@ -94,7 +94,7 @@ Private CA에서 인증서를 발급 받기까지의 과정은 다음과 같습�
 #### 저장소 상세 정보
 
 ACME 정보 하단에는 저장소 상세 정보가 표시됩니다.
-![overview_detail](../pca_images/overview_detail.png)
+![overview_detail](https://static.toastoven.net/prod_privateca/2025-12-23_ko/overview_detail.png)
 
 - **저장소 ID**: 저장소의 ID
 - **CRL URL**: 인증서 폐기 목록(certificate revocation list)을 확인할 수 있는 URL
@@ -120,7 +120,7 @@ ACME 정보 하단에는 저장소 상세 정보가 표시됩니다.
 ### 발급자 목록
 
 발급자 탭에서는 생성된 모든 발급자를 테이블 형태로 확인할 수 있습니다. 테이블에는 다음 정보가 표시됩니다.
-![issuer_list_after](../pca_images/issuer_list_after.png)
+![issuer_list_after](https://static.toastoven.net/prod_privateca/2025-12-23_ko/issuer_list_after.png)
 
 - **이름**: 발급자의 이름
 - **상태**: 발급자의 현재 상태
@@ -135,17 +135,17 @@ ACME 정보 하단에는 저장소 상세 정보가 표시됩니다.
 ### 발급자 추가
 
 1. 발급자 탭에서 **+ 추가**를 클릭합니다.
-  ![issuer_list](../pca_images/issuer_list.png)
+  ![issuer_list](https://static.toastoven.net/prod_privateca/2025-12-23_ko/issuer_list.png)
 
 
 2. 발급자 생성 페이지에서 다음 정보를 입력합니다.
-  ![issuer_create](../pca_images/issuer_create.png)
+  ![issuer_create](https://static.toastoven.net/prod_privateca/2025-12-23_ko/issuer_create.png)
     - 기본 정보
         - **발급자 유형**: 발급자의 유형으로 Root 또는 Intermediate 선택
             - **Root**: 최상위 인증 기관으로, 자체 서명된 인증서입니다.
             - **Intermediate**: 중간 인증 기관으로, Root CA에 의해 서명됩니다.
                 - **상위 인증서 ID**: Intermediate 유형을 선택한 경우, 상위 발급자를 선택합니다.
-                  ![issuer_create_intermediate](../pca_images/issuer_create_intermediate.png)
+                  ![issuer_create_intermediate](https://static.toastoven.net/prod_privateca/2025-12-23_ko/issuer_create_intermediate.png)
         - **발급자 이름**(필수): 발급자를 식별할 이름
         - **발급자 설명**(선택): 발급자에 대한 설명
         - **일반 이름**(필수): 인증서 일반 이름
@@ -181,7 +181,7 @@ ACME 정보 하단에는 저장소 상세 정보가 표시됩니다.
 ### 발급자 상세 정보
 
 발급자 목록에서 발급자 이름을 클릭하면 상세 정보 페이지로 이동합니다. 상세 페이지에는 다음 정보가 표시되며, 상단의 다운로드 버튼을 통해서 인증서 PEM 파일을 다운로드할 수 있습니다.
-![issuer_detail](../pca_images/issuer_detail.png)
+![issuer_detail](https://static.toastoven.net/prod_privateca/2025-12-23_ko/issuer_detail.png)
 
 #### 인증서 정보
 - 상태, 유형, 시리얼 번호
@@ -222,7 +222,7 @@ ACME 정보 하단에는 저장소 상세 정보가 표시됩니다.
 ### 인증서 템플릿 목록
 
 인증서 템플릿 탭에서는 생성된 모든 인증서 템플릿을 테이블 형태로 확인할 수 있습니다. 테이블에는 다음 정보가 표시됩니다.
-![template_list_after](../pca_images/template_list_after.png)
+![template_list_after](https://static.toastoven.net/prod_privateca/2025-12-23_ko/template_list_after.png)
 
 - **이름**: 인증서 템플릿 이름을 클릭하면 상세 정보로 이동합니다.
 - **설명**: 인증서 템플릿에 대한 설명
@@ -232,10 +232,10 @@ ACME 정보 하단에는 저장소 상세 정보가 표시됩니다.
 ### 인증서 템플릿 추가
 
 1. 인증서 템플릿 탭에서 **+ 추가**를 클릭합니다.
-  ![template_list](../pca_images/template_list.png)
+  ![template_list](https://static.toastoven.net/prod_privateca/2025-12-23_ko/template_list.png)
 
 2. 인증서 템플릿 생성 페이지에서 다음 정보를 입력합니다.
-  ![template_create](../pca_images/template_create.png)
+  ![template_create](https://static.toastoven.net/prod_privateca/2025-12-23_ko/template_create.png)
 
     - 기본 정보
         - **인증서 템플릿 이름**(필수): 인증서 템플릿을 식별할 이름
@@ -297,7 +297,7 @@ ACME 정보 하단에는 저장소 상세 정보가 표시됩니다.
 ### 인증서 템플릿 상세 정보
 
 인증서 템플릿 목록에서 인증서 템플릿 이름을 클릭하면 상세 정보 페이지로 이동합니다. 상세 페이지는 접을 수 있는 섹션으로 구성되어 있으며, 사용자가 입력한 정보들을 확인할 수 있습니다.
-![template_detail](../pca_images/template_detail.png)
+![template_detail](https://static.toastoven.net/prod_privateca/2025-12-23_ko/template_detail.png)
 
 상세 페이지 상단에는 **+ 인증서 신규 생성** 및 **수정**, **삭제** 버튼이 있습니다.
 
@@ -320,12 +320,12 @@ ACME 정보 하단에는 저장소 상세 정보가 표시됩니다.
 인증서 템플릿을 사용하여 인증서를 생성하는 방법은 다음과 같습니다.
 
 1. 인증서 템플릿 상세 페이지 상단의 **+ 인증서 신규 생성**을 클릭합니다.
-  ![template_detail_generate](../pca_images/template_detail_generate.png)
+  ![template_detail_generate](https://static.toastoven.net/prod_privateca/2025-12-23_ko/template_detail_generate.png)
 
 2. 인증서 생성 형태를 선택합니다.
-  ![template_generate](../pca_images/template_generate.png)
+  ![template_generate](https://static.toastoven.net/prod_privateca/2025-12-23_ko/template_generate.png)
     - **인증서 CSR 서명**을 선택할 경우 다음과 같이 다른 형태의 입력 폼이 나타납니다.
-  ![template_generate_csr](../pca_images/template_generate_csr.png)
+  ![template_generate_csr](https://static.toastoven.net/prod_privateca/2025-12-23_ko/template_generate_csr.png)
 
 3. 인증서 생성 페이지에서 다음 정보를 입력합니다.
     - **일반 이름**(필수): 인증서의 주체 이름
@@ -343,7 +343,7 @@ ACME 정보 하단에는 저장소 상세 정보가 표시됩니다.
 ### 인증서 목록
 
 인증서 탭에서는 발급된 모든 인증서를 테이블 형태로 확인할 수 있습니다. 테이블에는 다음 정보가 표시됩니다.
-![certificate_list](../pca_images/certificate_list.png)
+![certificate_list](https://static.toastoven.net/prod_privateca/2025-12-23_ko/certificate_list.png)
 
 - **일반 이름**: 인증서의 일반 이름을 클릭하면 상세 정보로 이동합니다.
 - **상태**: 인증서의 현재 상태
@@ -357,7 +357,7 @@ ACME 정보 하단에는 저장소 상세 정보가 표시됩니다.
 ### 인증서 상세 정보
 
 인증서 목록에서 일반 이름을 클릭하면 상세 정보 페이지로 이동합니다. 상세 페이지에는 다음 정보가 표시되며, 상단의 다운로드 버튼을 통해서 인증서 PEM 파일을 다운로드할 수 있습니다.
-![certificate_detail](../pca_images/certificate_detail.png)
+![certificate_detail](https://static.toastoven.net/prod_privateca/2025-12-23_ko/certificate_detail.png)
 
 #### 인증서 정보
 - **일반 이름**: 인증서의 일반 이름
@@ -393,7 +393,7 @@ ACME(automated certificate management environment)는 인증서 발급 및 갱�
 ### ACME 토큰 목록
 
 ACME 관리 탭에서는 생성된 모든 ACME 토큰을 테이블 형태로 확인할 수 있습니다. 테이블에는 다음 정보가 표시됩니다.
-![acme_list_after](../pca_images/acme_list_after.png)
+![acme_list_after](https://static.toastoven.net/prod_privateca/2025-12-23_ko/acme_list_after.png)
 
 - **이름**: ACME 토큰의 이름을 클릭하면 상세 정보로 이동합니다.
 - **ID**: ACME 토큰 ID
@@ -404,17 +404,17 @@ ACME 관리 탭에서는 생성된 모든 ACME 토큰을 테이블 형태로 확
 ### ACME 토큰 추가
 
 1. ACME 관리 탭에서 **+ ACME 토큰 추가**를 클릭합니다.
-  ![acme_list](../pca_images/acme_list.png)
+  ![acme_list](https://static.toastoven.net/prod_privateca/2025-12-23_ko/acme_list.png)
 
 2. ACME 토큰 생성 모달 창에서 다음 정보를 입력합니다.
-  ![acme_create](../pca_images/acme_create.png)
+  ![acme_create](https://static.toastoven.net/prod_privateca/2025-12-23_ko/acme_create.png)
     - **이름**(필수): ACME 토큰을 식별할 이름
     - **설명**(선택): ACME 토큰에 대한 설명
 
 3. **생성**을 클릭하여 토큰을 생성합니다.
 
 #### ACME 토큰 생성 완료 후 정보 확인
-![acme_once](../pca_images/acme_once.png)
+![acme_once](https://static.toastoven.net/prod_privateca/2025-12-23_ko/acme_once.png)
 토큰이 생성되면 다음 정보가 표시됩니다.
 
 - **토큰 ID**: ACME 클라이언트 설정에 사용되는 식별자
@@ -425,7 +425,7 @@ ACME 관리 탭에서는 생성된 모든 ACME 토큰을 테이블 형태로 확
 
 ### ACME 토큰 상세 정보
 
-![acme_detail](../pca_images/acme_detail.png)
+![acme_detail](https://static.toastoven.net/prod_privateca/2025-12-23_ko/acme_detail.png)
 토큰 목록에서 토큰 이름을 클릭하면 상세 정보 페이지로 이동합니다. 상세 페이지에는 다음 정보가 표시됩니다.
 
 #### 발급된 인증서
@@ -443,7 +443,7 @@ ACME 관리 탭에서는 생성된 모든 ACME 토큰을 테이블 형태로 확
 ### ACME 토큰 삭제
 
 1. ACME 관리 탭에서 삭제할 토큰의 **삭제**를 클릭합니다.
-  ![acme_detail_delete](../pca_images/acme_detail_delete.png)
+  ![acme_detail_delete](https://static.toastoven.net/prod_privateca/2025-12-23_ko/acme_detail_delete.png)
 
 2. 확인 대화상자에서 **삭제**를 클릭하여 삭제를 확정합니다.
 
@@ -452,7 +452,7 @@ ACME 관리 탭에서는 생성된 모든 ACME 토큰을 테이블 형태로 확
 
 ## 인증서 이력
 
-![history](../pca_images/history.png)
+![history](https://static.toastoven.net/prod_privateca/2025-12-23_ko/history.png)
 인증서 이력 탭에서는 저장소에서 발생한 인증서 관련 활동을 시간순으로 확인할 수 있습니다. 이력에는 다음과 같은 정보가 포함됩니다.
 
 - 발급자, 인증서 생성 이력
