@@ -1,8 +1,6 @@
 # 콘솔 사용 가이드
 **Management > Private CA > 콘솔 사용 가이드**
 
-시작하기에서는 Private CA를 사용하는 데 필요한 기본적인 내용을 설명합니다.
-
 Private CA 콘솔은 인증 기관(certificate authority, CA)을 중심으로 구성되어 있으며, 모든 리소스(인증서 템플릿, 발급자, 인증서, ACME 토큰)는 특정 저장소에 속합니다. 콘솔 화면은 왼쪽에 저장소 목록, 오른쪽에 선택한 저장소의 상세 정보를 표시하는 탭 구조로 되어 있습니다.
 
 ## Private CA 사용 흐름
@@ -11,8 +9,8 @@ Private CA에서 인증서를 발급 받기까지의 과정은 다음과 같습�
 
 1. **저장소 생성**: 인증서를 관리할 공간을 만듭니다.
 2. **발급자 생성**: 인증서에 서명할 인증 기관(CA)을 만듭니다.
-   - Root CA: 최상위 인증 기관
-   - Intermediate CA: Root CA 아래의 중간 인증 기관
+    - Root CA: 최상위 인증 기관
+    - Intermediate CA: Root CA 아래의 중간 인증 기관
 3. **인증서 템플릿 생성**: 동일한 설정으로 여러 인증서를 발급할 때 사용합니다.
 4. **인증서 발급**: 인증서 템플릿을 통해 실제 사용할 인증서를 발급 받습니다.
 
@@ -28,31 +26,31 @@ Private CA에서 인증서를 발급 받기까지의 과정은 다음과 같습�
 ### 저장소 추가
 
 1. 콘솔 왼쪽 상단의 **+ 추가**를 클릭해서 저장소를 추가합니다.
-  ![ca_empty_list](../pca_images/ca_init.png)
+  ![ca_empty_list](https://static.toastoven.net/prod_privateca/2025-12-23_ko/ca_init.png)
 
 2. 저장소 추가 모달 창에서 다음 정보를 입력합니다.
-  ![ca_create](../pca_images/ca_create.png)
-  - **저장소 이름**(필수): 저장소를 식별할 이름을 입력합니다.
-  - **저장소 설명**(선택): 저장소에 대한 설명을 입력합니다.
-  - **CRL 활성화**
-    - CRL(certificate revocation list, 인증서 폐기 목록) 활성화 여부를 선택합니다.
-    - 폐기된 인증서 목록을 주기적으로 제공하여 클라이언트가 인증서 유효성을 확인할 수 있습니다.
-    - CRL을 활성화하면 갱신 주기를 일 단위로 설정할 수 있습니다.
-  - **OCSP 활성화**
-    - OCSP(online certificate status protocol) 활성화 여부를 선택합니다.
-    - 개별 인증서의 폐기 상태를 요청 시점의 상태로 빠르게 확인할 수 있는 프로토콜입니다.
-    - OCSP를 활성화하면 갱신 주기를 시간 단위로 설정할 수 있습니다.
+  ![ca_create](https://static.toastoven.net/prod_privateca/2025-12-23_ko/ca_create.png)
+    - **저장소 이름**(필수): 저장소를 식별할 이름을 입력합니다.
+    - **저장소 설명**(선택): 저장소에 대한 설명을 입력합니다.
+    - **CRL 활성화**
+        - CRL(certificate revocation list, 인증서 폐기 목록) 활성화 여부를 선택합니다.
+        - 폐기된 인증서 목록을 주기적으로 제공하여 클라이언트가 인증서 유효성을 확인할 수 있습니다.
+        - CRL을 활성화하면 갱신 주기를 일 단위로 설정할 수 있습니다.
+    - **OCSP 활성화**
+        - OCSP(online certificate status protocol) 활성화 여부를 선택합니다.
+        - 개별 인증서의 폐기 상태를 요청 시점의 상태로 빠르게 확인할 수 있는 프로토콜입니다.
+        - OCSP를 활성화하면 갱신 주기를 시간 단위로 설정할 수 있습니다.
 
 3. **생성**을 클릭하여 저장소를 생성합니다.
 
 ### 저장소 수정, 삭제
 
 저장소 목록에서 각 저장소 항목의 오른쪽에 있는 메뉴 버튼(⋮)을 클릭하면 다음 작업을 수행할 수 있습니다.
-![overview_3dot](../pca_images/overview_3dot.png)
+![overview_3dot](https://static.toastoven.net/prod_privateca/2025-12-23_ko/overview_3dot.png)
 
 - **수정**: 저장소의 이름, 설명, CRL/OCSP 설정을 변경할 수 있습니다.
 - **삭제**: 저장소를 삭제합니다.
-  - 저장소를 삭제하면 해당 저장소에 속한 모든 리소스(발급자, 인증서 템플릿, 인증서, ACME 토큰)가 함께 삭제됩니다.
+    - 저장소를 삭제하면 해당 저장소에 속한 모든 리소스(발급자, 인증서 템플릿, 인증서, ACME 토큰)가 함께 삭제됩니다.
 
 !!! danger "주의"
     삭제 작업은 되돌릴 수 없으므로 주의가 필요합니다.
@@ -64,7 +62,7 @@ Private CA에서 인증서를 발급 받기까지의 과정은 다음과 같습�
 #### 탭 목록
 
 저장소를 선택하면 우측 화면 상단에는 다음과 같은 탭이 있으며, 각 탭을 클릭하여 해당 기능으로 이동할 수 있습니다.
-![overview_tabs](../pca_images/overview_tabs.png)
+![overview_tabs](https://static.toastoven.net/prod_privateca/2025-12-23_ko/overview_tabs.png)
 
 - **개요**: 저장소의 통계 정보와 설정 정보
 - **인증서 템플릿**: 인증서 템플릿 목록 및 관리
@@ -76,7 +74,7 @@ Private CA에서 인증서를 발급 받기까지의 과정은 다음과 같습�
 #### 리소스 통계 카드
 
 화면 상단에는 저장소의 주요 리소스 수를 표시하는 카드가 3개 나타납니다.
-![overview_resource_card](../pca_images/overview_resource_card.png)
+![overview_resource_card](https://static.toastoven.net/prod_privateca/2025-12-23_ko/overview_resource_card.png)
 
 - **인증서 템플릿**: 생성된 인증서 템플릿 총 개수
 - **발급자**: 생성된 발급자(Root CA, Intermediate CA) 총 개수
@@ -87,7 +85,7 @@ Private CA에서 인증서를 발급 받기까지의 과정은 다음과 같습�
 #### ACME 정보
 
 리소스 카드 하단에는 ACME 정보가 표시됩니다.
-![overview_acme_info](../pca_images/overview_acme_info.png)
+![overview_acme_info](https://static.toastoven.net/prod_privateca/2025-12-23_ko/overview_acme_info.png)
 
 - **전체 토큰**: 생성된 ACME 토큰 총 개수
 - **활성 토큰**: 활성 상태의 ACME 토큰 개수
@@ -96,7 +94,7 @@ Private CA에서 인증서를 발급 받기까지의 과정은 다음과 같습�
 #### 저장소 상세 정보
 
 ACME 정보 하단에는 저장소 상세 정보가 표시됩니다.
-![overview_detail](../pca_images/overview_detail.png)
+![overview_detail](https://static.toastoven.net/prod_privateca/2025-12-23_ko/overview_detail.png)
 
 - **저장소 ID**: 저장소의 ID
 - **CRL URL**: 인증서 폐기 목록(certificate revocation list)을 확인할 수 있는 URL
@@ -115,19 +113,19 @@ ACME 정보 하단에는 저장소 상세 정보가 표시됩니다.
 
 - **Root CA만 사용하는 경우**: 소규모 조직 내부용 인증서 발급
 - **Root CA + Intermediate CA 사용하는 경우**
-  - Root CA의 개인 키를 안전하게 보관하고 싶을 때
-  - 여러 부서/프로젝트별로 별도의 CA를 운영하고 싶을 때
-  - 보안 모범 사례를 따르고 싶을 때(권장)
+    - Root CA의 개인 키를 안전하게 보관하고 싶을 때
+    - 여러 부서/프로젝트별로 별도의 CA를 운영하고 싶을 때
+    - 보안 모범 사례를 따르고 싶을 때(권장)
 
 ### 발급자 목록
 
 발급자 탭에서는 생성된 모든 발급자를 테이블 형태로 확인할 수 있습니다. 테이블에는 다음 정보가 표시됩니다.
-![issuer_list_after](../pca_images/issuer_list_after.png)
+![issuer_list_after](https://static.toastoven.net/prod_privateca/2025-12-23_ko/issuer_list_after.png)
 
 - **이름**: 발급자의 이름
 - **상태**: 발급자의 현재 상태
-  - **active**: 정상적으로 사용 가능한 상태(파란색)
-  - **revoked**: 폐기된 상태(빨간색)
+    - **active**: 정상적으로 사용 가능한 상태(파란색)
+    - **revoked**: 폐기된 상태(빨간색)
 - **유형**: Root 또는 Intermediate
 - **시리얼 번호**: 인증서의 고유 시리얼 번호
 - **일반 이름**: 인증서의 일반 이름
@@ -137,53 +135,53 @@ ACME 정보 하단에는 저장소 상세 정보가 표시됩니다.
 ### 발급자 추가
 
 1. 발급자 탭에서 **+ 추가**를 클릭합니다.
-  ![issuer_list](../pca_images/issuer_list.png)
+  ![issuer_list](https://static.toastoven.net/prod_privateca/2025-12-23_ko/issuer_list.png)
 
 
 2. 발급자 생성 페이지에서 다음 정보를 입력합니다.
-  ![issuer_create](../pca_images/issuer_create.png)
-  - 기본 정보
-    - **발급자 유형**: 발급자의 유형으로 Root 또는 Intermediate 선택
-      - **Root**: 최상위 인증 기관으로, 자체 서명된 인증서입니다.
-      - **Intermediate**: 중간 인증 기관으로, Root CA에 의해 서명됩니다.
-        - **상위 인증서 ID**: Intermediate 유형을 선택한 경우, 상위 발급자를 선택합니다.
-          ![issuer_create_intermediate](../pca_images/issuer_create_intermediate.png)
-    - **발급자 이름**(필수): 발급자를 식별할 이름
-    - **발급자 설명**(선택): 발급자에 대한 설명
-    - **일반 이름**(필수): 인증서 일반 이름
-    - **만료 입력 방식**: 유효기간을 입력하며, TTL 또는 특정 날짜 중 선택
-      - **TTL**: 발급 시점부터 지정한 기간 동안 유효(예: 365d, 8760h, 60m, 30s)
-      - **특정 날짜**: 특정 만료 날짜(유효 종료 시각)를 지정
-    - **백데이트 유효성**: 인증서 유효 시작 시점을 현재 시간보다 이전으로 설정하는 기간입니다. 시간 동기화 문제를 방지하기 위해 사용됩니다.(기본값: 30s / 예: 1d, 24h, 60m, 30s)
-    - **최대 경로 길이**: 인증서 체인에서 이 발급자 아래에 허용되는 중간 CA의 최대 수를 지정합니다. 0은 더 이상 하위 CA를 생성할 수 없음을 의미합니다.(예: 0)
+  ![issuer_create](https://static.toastoven.net/prod_privateca/2025-12-23_ko/issuer_create.png)
+    - 기본 정보
+        - **발급자 유형**: 발급자의 유형으로 Root 또는 Intermediate 선택
+            - **Root**: 최상위 인증 기관으로, 자체 서명된 인증서입니다.
+            - **Intermediate**: 중간 인증 기관으로, Root CA에 의해 서명됩니다.
+                - **상위 인증서 ID**: Intermediate 유형을 선택한 경우, 상위 발급자를 선택합니다.
+                  ![issuer_create_intermediate](https://static.toastoven.net/prod_privateca/2025-12-23_ko/issuer_create_intermediate.png)
+        - **발급자 이름**(필수): 발급자를 식별할 이름
+        - **발급자 설명**(선택): 발급자에 대한 설명
+        - **일반 이름**(필수): 인증서 일반 이름
+        - **만료 설정**(필수): 유효기간을 입력하며, TTL 또는 특정 날짜 중 선택
+            - **TTL**: 발급 시점부터 지정한 기간 동안 유효(예: 365d, 8760h, 60m, 30s)
+            - **특정 날짜**: 특정 만료 날짜(유효 종료 시각)를 지정
+        - **백데이트 유효성**: 인증서 유효 시작 시점을 현재 시간보다 이전으로 설정하는 기간입니다. 시간 동기화 문제를 방지하기 위해 사용됩니다.(기본값: 30s / 예: 1d, 24h, 60m, 30s)
+        - **최대 경로 길이**: 인증서 체인에서 이 발급자 아래에 허용되는 중간 CA의 최대 수를 지정합니다. 0은 더 이상 하위 CA를 생성할 수 없음을 의미합니다.(예: 0)
 
-  - 키 정보
-    - **키 알고리즘**: RSA, EC, ED25519 중 선택
-    - **키 비트**: 알고리즘에 따른 키 비트 선택
+    - 키 정보
+        - **키 알고리즘**: RSA, EC, ED25519 중 선택
+        - **키 비트**: 알고리즘에 따른 키 비트 선택
 
-  - SAN(subject alternative name) 설정
-    - **SAN에서 일반 이름 제외**: SAN 목록에서 일반 이름(CN)을 자동으로 제외할지 여부를 선택합니다.
-    - **주체 시리얼 번호**: 주체의 고유 시리얼 번호를 입력합니다.
-    - **주체 대체 이름(SANs)**: 도메인 형식의 추가 식별 이름(예: example.com, sub.example.com)
-    - **IP 주체 대체 이름(IP SANs)**: IP 주소 형식의 추가 식별 이름(예: 192.168.1.1, 10.0.0.1)
-    - **URI 주체 대체 이름(URI SANs)**: URI 형식의 추가 식별 이름(예: https://example.com, spiffe://example.org)
-    - **기타 SANs**: 기타 형식의 SAN(예: 1.2.3.4;UTF8:test@example.com)
+    - SAN(subject alternative name) 설정
+        - **SAN에서 일반 이름 제외**: SAN 목록에서 일반 이름(CN)을 자동으로 제외할지 여부를 선택합니다.
+        - **주체 시리얼 번호**: 주체의 고유 시리얼 번호를 입력합니다.
+        - **주체 대체 이름(SANs)**: 도메인 형식의 추가 식별 이름(예: example.com, sub.example.com)
+        - **IP 주체 대체 이름(IP SANs)**: IP 주소 형식의 추가 식별 이름(예: 192.168.1.1, 10.0.0.1)
+        - **URI 주체 대체 이름(URI SANs)**: URI 형식의 추가 식별 이름(예: https://example.com, spiffe://example.org)
+        - **기타 SANs**: 기타 형식의 SAN(예: 1.2.3.4;UTF8:test@example.com)
 
-  - 주체 정보(Subject)
-    - **국가(C)**: 국가 코드
-    - **시/도(ST)**: 주 또는 도
-    - **시/군/구(L)**: 도시명
-    - **도로명 주소**: 도로명 주소
-    - **우편번호**: 우편번호
-    - **기관(조직)(O)**: 조직명
-    - **부서(조직 단위)(OU)**: 부서명
+    - 주체 정보(Subject)
+        - **국가(C)**: 국가 코드
+        - **시/도(ST)**: 주 또는 도
+        - **시/군/구(L)**: 도시명
+        - **도로명 주소**: 도로명 주소
+        - **우편번호**: 우편번호
+        - **기관(조직)(O)**: 조직명
+        - **부서(조직 단위)(OU)**: 부서명
 
 3. **추가**를 클릭하여 발급자를 추가합니다.
 
 ### 발급자 상세 정보
 
 발급자 목록에서 발급자 이름을 클릭하면 상세 정보 페이지로 이동합니다. 상세 페이지에는 다음 정보가 표시되며, 상단의 다운로드 버튼을 통해서 인증서 PEM 파일을 다운로드할 수 있습니다.
-![issuer_detail](../pca_images/issuer_detail.png)
+![issuer_detail](https://static.toastoven.net/prod_privateca/2025-12-23_ko/issuer_detail.png)
 
 #### 인증서 정보
 - 상태, 유형, 시리얼 번호
@@ -206,8 +204,8 @@ ACME 정보 하단에는 저장소 상세 정보가 표시됩니다.
 발급자 상세 페이지에서 이름과 설명을 직접 수정할 수 있습니다. 수정 후 **저장**을 클릭하여 변경 사항을 저장합니다.
 
 - 편집 가능 필드
-  - **이름**: 발급자 이름을 수정할 수 있습니다.
-  - **설명**: 발급자 설명을 수정할 수 있습니다.
+    - **이름**: 발급자 이름을 수정할 수 있습니다.
+    - **설명**: 발급자 설명을 수정할 수 있습니다.
 
 #### 발급자 폐기
 1. 발급자 목록에서 폐기할 발급자의 **폐기**를 클릭합니다.
@@ -224,7 +222,7 @@ ACME 정보 하단에는 저장소 상세 정보가 표시됩니다.
 ### 인증서 템플릿 목록
 
 인증서 템플릿 탭에서는 생성된 모든 인증서 템플릿을 테이블 형태로 확인할 수 있습니다. 테이블에는 다음 정보가 표시됩니다.
-![template_list_after](../pca_images/template_list_after.png)
+![template_list_after](https://static.toastoven.net/prod_privateca/2025-12-23_ko/template_list_after.png)
 
 - **이름**: 인증서 템플릿 이름을 클릭하면 상세 정보로 이동합니다.
 - **설명**: 인증서 템플릿에 대한 설명
@@ -234,73 +232,72 @@ ACME 정보 하단에는 저장소 상세 정보가 표시됩니다.
 ### 인증서 템플릿 추가
 
 1. 인증서 템플릿 탭에서 **+ 추가**를 클릭합니다.
-  ![template_list](../pca_images/template_list.png)
+  ![template_list](https://static.toastoven.net/prod_privateca/2025-12-23_ko/template_list.png)
 
 2. 인증서 템플릿 생성 페이지에서 다음 정보를 입력합니다.
-  ![template_create](../pca_images/template_create.png)
+  ![template_create](https://static.toastoven.net/prod_privateca/2025-12-23_ko/template_create.png)
 
-  - 기본 정보
-    - **인증서 템플릿 이름**(필수): 인증서 템플릿을 식별할 이름
-    - **설명**(선택): 인증서 템플릿에 대한 설명
-    - **발급자 선택**: 이 인증서 템플릿으로 생성된 인증서에 서명할 발급자를 선택합니다.
+    - 기본 정보
+        - **인증서 템플릿 이름**(필수): 인증서 템플릿을 식별할 이름
+        - **설명**(선택): 인증서 템플릿에 대한 설명
+        - **발급자 선택**: 이 인증서 템플릿으로 생성된 인증서에 서명할 발급자를 선택합니다.
 
-  - 제한 설정
-    - 만료 설정
-      - **만료 입력 방식**: TTL 또는 특정 날짜 중 선택
-        - **TTL**: 최대 유효 기간 설정(예: 365d, 8760h, 60m, 30s)
-        - **특정 날짜**: 고정된 만료 날짜(유효 종료 시각)를 지정
-      - **백데이트 유효성**: 인증서 유효 시작 시점을 현재 시간보다 이전으로 설정하는 기간입니다. 시간 동기화 문제를 방지하기 위해 사용됩니다.(기본값: 30s / 예: 1d, 24h, 60m, 30s)
+    - 제한 설정
+        - **만료 설정**(필수)
+            - **TTL**: 최대 유효 기간 설정(예: 365d, 8760h, 60m, 30s)
+            - **특정 날짜**: 고정된 만료 날짜(유효 종료 시각)를 지정
+        - **백데이트 유효성**: 인증서 유효 시작 시점을 현재 시간보다 이전으로 설정하는 기간입니다. 시간 동기화 문제를 방지하기 위해 사용됩니다.(기본값: 30s / 예: 1d, 24h, 60m, 30s)
 
     - SAN 옵션
-      - **IP SANs 허용**: IP 주소를 SAN에 포함할 수 있도록 허용합니다.
-      - **URI 주체 대체 이름(URI SANs)**: URI 형식의 SAN을 입력합니다.(예: https://example.com, spiffe://example.org)
+        - **IP SANs 허용**: IP 주소를 SAN에 포함할 수 있도록 허용합니다.
+        - **URI 주체 대체 이름(URI SANs)**: URI 형식의 SAN을 입력합니다.(예: https://example.com, spiffe://example.org)
       - **기타 SANs**: 기타 형식의 SAN을 입력합니다.(예: 1.2.3.4;UTF8:test@example.com)
 
-  - 공통 반영 설정
-    - 설정
-      - **서버 저장 여부 결정**: 생성된 인증서를 서버에 저장할지 여부를 선택합니다.
-      - **비CA에 대한 기본 제약 조건 유효화**: CA가 아님을 인증서에 명시할지에 대한 여부를 선택합니다.
+    - 공통 반영 설정
+        - 설정
+            - **서버 저장 여부 결정**: 생성된 인증서를 서버에 저장할지 여부를 선택합니다.
+            - **비CA에 대한 기본 제약 조건 유효화**: CA가 아님을 인증서에 명시할지에 대한 여부를 선택합니다.
 
-    - 키 파라미터
-      - **키 알고리즘**: RSA, EC, ED25519 중 선택
-      - **키 비트**: 알고리즘에 따른 키 비트 선택
-      - **시그니처 비트**: 인증서 서명에 사용할 해시 알고리즘의 비트 수 선택
+        - 키 파라미터
+            - **키 알고리즘**: RSA, EC, ED25519 중 선택
+            - **키 비트**: 알고리즘에 따른 키 비트 선택
+            - **시그니처 비트**: 인증서 서명에 사용할 해시 알고리즘의 비트 수 선택
 
-      !!! danger "주의"
-          시그니처 비트는 RSA 알고리즘일 때만 설정이 가능합니다. 그 외의 알고리즘에서는 무시됩니다.
+            !!! danger "주의"
+                시그니처 비트는 RSA 알고리즘일 때만 설정이 가능합니다. 그 외의 알고리즘에서는 무시됩니다.
 
-    - 키 용도(Key Usage)
-      - `digitalSignature`(디지털 서명), `keyEncipherment`(키 암호화), `keyCertSign`(인증서 서명) 등 인증서 용도를 선택합니다.
+        - 키 용도(Key Usage)
+            - `digitalSignature`(디지털 서명), `keyEncipherment`(키 암호화), `keyCertSign`(인증서 서명) 등 인증서 용도를 선택합니다.
 
-    - 확장 키 용도(Extended Key Usage)
-      - `serverAuth`(TLS 서버 인증), `clientAuth`(TLS 클라이언트 인증), `codeSigning`(코드 서명) 등 확장 키 사용 용도를 선택합니다.
-      - **확장 키 용도 OIDs**: 추가 확장 키 용도 OID를 직접 입력할 수 있습니다.(예: 1.3.6.1.5.5.7.3.1, 1.3.6.1.5.5.7.3.2)
+        - 확장 키 용도(Extended Key Usage)
+            - `serverAuth`(TLS 서버 인증), `clientAuth`(TLS 클라이언트 인증), `codeSigning`(코드 서명) 등 확장 키 사용 용도를 선택합니다.
+            - **확장 키 용도 OIDs**: 추가 확장 키 용도 OID를 직접 입력할 수 있습니다.(예: 1.3.6.1.5.5.7.3.1, 1.3.6.1.5.5.7.3.2)
 
-    - 정책(Certificate Policies)
-      - **정책 목록**: 인증서가 준수하는 정책을 나타내는 OID를 입력합니다. 여러 개의 OID를 입력할 수 있습니다.
-        - 예: 2.5.29.32.0(anyPolicy), 1.2.3.4.5(조직 고유 정책)
-      - 인증서 정책 필드는 인증서가 어떤 정책하에 발급되었는지를 명시하며, 인증서 검증 시 정책 준수 여부를 확인하는 데 사용됩니다.
+        - 정책(Certificate Policies)
+            - **정책 목록**: 인증서가 준수하는 정책을 나타내는 OID를 입력합니다. 여러 개의 OID를 입력할 수 있습니다.
+                - 예: 2.5.29.32.0(anyPolicy), 1.2.3.4.5(조직 고유 정책)
+            - 인증서 정책 필드는 인증서가 어떤 정책하에 발급되었는지를 명시하며, 인증서 검증 시 정책 준수 여부를 확인하는 데 사용됩니다.
 
     - 추가 주체 필드
-      - **CSR 일반 이름 사용**: CSR의 CN을 인증서에 그대로 사용할지 여부를 선택합니다.
-      - **CSR SANs 사용**: CSR의 SAN을 인증서에 포함할지 여부를 선택합니다.
-      - **국가(C)**: 국가 코드
-      - **시/도(ST)**: 주 또는 도
-      - **시/군/구(L)**: 도시명
-      - **도로명 주소**: 도로명 주소
-      - **우편번호**: 우편번호
-      - **기관(조직)(O)**: 조직명
-      - **부서(조직 단위)(OU)**: 부서명
+        - **CSR 일반 이름 사용**: CSR의 CN을 인증서에 그대로 사용할지 여부를 선택합니다.
+        - **CSR SANs 사용**: CSR의 SAN을 인증서에 포함할지 여부를 선택합니다.
+        - **국가(C)**: 국가 코드
+        - **시/도(ST)**: 주 또는 도
+        - **시/군/구(L)**: 도시명
+        - **도로명 주소**: 도로명 주소
+        - **우편번호**: 우편번호
+        - **기관(조직)(O)**: 조직명
+        - **부서(조직 단위)(OU)**: 부서명
 
-      !!! danger "주의"
-          CSR의 Subject DN에 대한 값을 설정하더라도 인증서 템플릿에서 설정한 값으로 덮어씁니다.
+        !!! danger "주의"
+            CSR의 Subject DN에 대한 값을 설정하더라도 인증서 템플릿에서 설정한 값으로 덮어씁니다.
 
 3. **추가**를 클릭하여 인증서 템플릿을 추가합니다.
 
 ### 인증서 템플릿 상세 정보
 
 인증서 템플릿 목록에서 인증서 템플릿 이름을 클릭하면 상세 정보 페이지로 이동합니다. 상세 페이지는 접을 수 있는 섹션으로 구성되어 있으며, 사용자가 입력한 정보들을 확인할 수 있습니다.
-![template_detail](../pca_images/template_detail.png)
+![template_detail](https://static.toastoven.net/prod_privateca/2025-12-23_ko/template_detail.png)
 
 상세 페이지 상단에는 **+ 인증서 신규 생성** 및 **수정**, **삭제** 버튼이 있습니다.
 
@@ -323,20 +320,17 @@ ACME 정보 하단에는 저장소 상세 정보가 표시됩니다.
 인증서 템플릿을 사용하여 인증서를 생성하는 방법은 다음과 같습니다.
 
 1. 인증서 템플릿 상세 페이지 상단의 **+ 인증서 신규 생성**을 클릭합니다.
-  ![template_detail_generate](../pca_images/template_detail_generate.png)
+  ![template_detail_generate](https://static.toastoven.net/prod_privateca/2025-12-23_ko/template_detail_generate.png)
 
 2. 인증서 생성 형태를 선택합니다.
-  ![template_generate](../pca_images/template_generate.png)
+  ![template_generate](https://static.toastoven.net/prod_privateca/2025-12-23_ko/template_generate.png)
     - **인증서 CSR 서명**을 선택할 경우 다음과 같이 다른 형태의 입력 폼이 나타납니다.
-  ![template_generate_csr](../pca_images/template_generate_csr.png)
+  ![template_generate_csr](https://static.toastoven.net/prod_privateca/2025-12-23_ko/template_generate_csr.png)
 
 3. 인증서 생성 페이지에서 다음 정보를 입력합니다.
-  - **일반 이름**(필수): 인증서의 주체 이름
-  - **SAN 도메인**(선택): 추가 도메인 이름
-  - **SAN IP**(선택): 추가 IP 주소
-  - **SAN URI**(선택): 추가 URI
-  - **유효 기간**: 인증서 템플릿의 최대 TTL 범위 내에서 설정
-  - 기타 인증서 템플릿에서 허용한 필드
+    - **일반 이름**(필수): 인증서의 주체 이름
+    - **만료 설정**(필수): 인증서 템플릿의 최대 설정 범위 내에서 설정
+    - **SAN 정보**: 추가 SAN 정보
 
 4. **확인**을 클릭하여 인증서를 생성합니다.
 
@@ -349,12 +343,12 @@ ACME 정보 하단에는 저장소 상세 정보가 표시됩니다.
 ### 인증서 목록
 
 인증서 탭에서는 발급된 모든 인증서를 테이블 형태로 확인할 수 있습니다. 테이블에는 다음 정보가 표시됩니다.
-![certificate_list](../pca_images/certificate_list.png)
+![certificate_list](https://static.toastoven.net/prod_privateca/2025-12-23_ko/certificate_list.png)
 
 - **일반 이름**: 인증서의 일반 이름을 클릭하면 상세 정보로 이동합니다.
 - **상태**: 인증서의 현재 상태
-  - **active**: 정상적으로 사용 가능한 상태(파란색)
-  - **revoked**: 폐기된 상태(빨간색)
+    - **active**: 정상적으로 사용 가능한 상태(파란색)
+    - **revoked**: 폐기된 상태(빨간색)
 - **시리얼 번호**: 인증서의 고유 시리얼 번호
 - **유효 시작 시각**: 인증서가 유효하게 된 시점
 
@@ -363,7 +357,7 @@ ACME 정보 하단에는 저장소 상세 정보가 표시됩니다.
 ### 인증서 상세 정보
 
 인증서 목록에서 일반 이름을 클릭하면 상세 정보 페이지로 이동합니다. 상세 페이지에는 다음 정보가 표시되며, 상단의 다운로드 버튼을 통해서 인증서 PEM 파일을 다운로드할 수 있습니다.
-![certificate_detail](../pca_images/certificate_detail.png)
+![certificate_detail](https://static.toastoven.net/prod_privateca/2025-12-23_ko/certificate_detail.png)
 
 #### 인증서 정보
 - **일반 이름**: 인증서의 일반 이름
@@ -371,8 +365,8 @@ ACME 정보 하단에는 저장소 상세 정보가 표시됩니다.
 - **인증서**: 인증서 PEM 정보
 - **CA 체인**: 체인 인증서 PEM 정보
 - **유효 기간**
-  - **유효 시작 시각**: 인증서가 유효하게 되는 시작 시점
-  - **유효 종료 시각**: 인증서가 만료되는 시점
+    - **유효 시작 시각**: 인증서가 유효하게 되는 시작 시점
+    - **유효 종료 시각**: 인증서가 만료되는 시점
 - **알고리즘 및 키 크기**: 서명 알고리즘과 키 길이
 - **키 용도**: digitalSignature, keyEncipherment 등
 - **확장 키 용도**: serverAuth, clientAuth 등
@@ -399,7 +393,7 @@ ACME(automated certificate management environment)는 인증서 발급 및 갱�
 ### ACME 토큰 목록
 
 ACME 관리 탭에서는 생성된 모든 ACME 토큰을 테이블 형태로 확인할 수 있습니다. 테이블에는 다음 정보가 표시됩니다.
-![acme_list_after](../pca_images/acme_list_after.png)
+![acme_list_after](https://static.toastoven.net/prod_privateca/2025-12-23_ko/acme_list_after.png)
 
 - **이름**: ACME 토큰의 이름을 클릭하면 상세 정보로 이동합니다.
 - **ID**: ACME 토큰 ID
@@ -410,17 +404,17 @@ ACME 관리 탭에서는 생성된 모든 ACME 토큰을 테이블 형태로 확
 ### ACME 토큰 추가
 
 1. ACME 관리 탭에서 **+ ACME 토큰 추가**를 클릭합니다.
-  ![acme_list](../pca_images/acme_list.png)
+  ![acme_list](https://static.toastoven.net/prod_privateca/2025-12-23_ko/acme_list.png)
 
 2. ACME 토큰 생성 모달 창에서 다음 정보를 입력합니다.
-  ![acme_create](../pca_images/acme_create.png)
-  - **이름**(필수): ACME 토큰을 식별할 이름
-  - **설명**(선택): ACME 토큰에 대한 설명
+  ![acme_create](https://static.toastoven.net/prod_privateca/2025-12-23_ko/acme_create.png)
+    - **이름**(필수): ACME 토큰을 식별할 이름
+    - **설명**(선택): ACME 토큰에 대한 설명
 
 3. **생성**을 클릭하여 토큰을 생성합니다.
 
 #### ACME 토큰 생성 완료 후 정보 확인
-![acme_once](../pca_images/acme_once.png)
+![acme_once](https://static.toastoven.net/prod_privateca/2025-12-23_ko/acme_once.png)
 토큰이 생성되면 다음 정보가 표시됩니다.
 
 - **토큰 ID**: ACME 클라이언트 설정에 사용되는 식별자
@@ -431,7 +425,7 @@ ACME 관리 탭에서는 생성된 모든 ACME 토큰을 테이블 형태로 확
 
 ### ACME 토큰 상세 정보
 
-![acme_detail](../pca_images/acme_detail.png)
+![acme_detail](https://static.toastoven.net/prod_privateca/2025-12-23_ko/acme_detail.png)
 토큰 목록에서 토큰 이름을 클릭하면 상세 정보 페이지로 이동합니다. 상세 페이지에는 다음 정보가 표시됩니다.
 
 #### 발급된 인증서
@@ -449,7 +443,7 @@ ACME 관리 탭에서는 생성된 모든 ACME 토큰을 테이블 형태로 확
 ### ACME 토큰 삭제
 
 1. ACME 관리 탭에서 삭제할 토큰의 **삭제**를 클릭합니다.
-  ![acme_detail_delete](../pca_images/acme_detail_delete.png)
+  ![acme_detail_delete](https://static.toastoven.net/prod_privateca/2025-12-23_ko/acme_detail_delete.png)
 
 2. 확인 대화상자에서 **삭제**를 클릭하여 삭제를 확정합니다.
 
@@ -458,7 +452,7 @@ ACME 관리 탭에서는 생성된 모든 ACME 토큰을 테이블 형태로 확
 
 ## 인증서 이력
 
-![history](../pca_images/history.png)
+![history](https://static.toastoven.net/prod_privateca/2025-12-23_ko/history.png)
 인증서 이력 탭에서는 저장소에서 발생한 인증서 관련 활동을 시간순으로 확인할 수 있습니다. 이력에는 다음과 같은 정보가 포함됩니다.
 
 - 발급자, 인증서 생성 이력
