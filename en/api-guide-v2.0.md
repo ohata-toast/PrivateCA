@@ -30,7 +30,7 @@ You can use the NHN Cloud Private CA API to manage certificates programmatically
 All API requests require the following authentication headers:
 
 ```
-X-NHN-Authorization: Bearer {access\_token}
+X-NHN-Authorization: Bearer {access_token}
 ```
 
 !!! TIP "Notice"
@@ -282,7 +282,7 @@ When encoding OCSP requests to Base64, they must be converted to a URL-safe form
 
 ```sh
 # OCSP request creation and Base64 encoding
-OCSP\_REQUEST=$(openssl ocsp -issuer ca.pem -cert cert.pem -reqout - | base64 -w 0)
+OCSP_REQUEST=$(openssl ocsp -issuer ca.pem -cert cert.pem -reqout - | base64 -w 0)
 
 # Send URL-encoded requests
 curl -X GET "https://kr1-pca.api.nhncloudservice.com/v2.0/appkeys/my-appkey/cas/1/ocsp/${OCSP_REQUEST}"
