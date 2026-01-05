@@ -34,7 +34,7 @@ Private CA is a service that allows you to issue and manage your own certificate
 
 Private CA service consists of the following components:
 
-![Private CA service structure](https://static.toastoven.net/prod_privateca/2025-12-23_ko/NHN%20Cloud_PrivateCA_overview_ko_900.png)
+![Private CA service structure](https://static.toastoven.net/prod_privateca/2025-12-23_ko/NHN%20Cloud_PrivateCA_overview_en_900.png)
 
 ### Repository
 
