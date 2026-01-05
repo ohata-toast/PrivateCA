@@ -34,7 +34,7 @@ Private CA is a service that allows you to issue and manage your own certificate
 
 Private CA service consists of the following components:
 
-![Private CA service structure](../pca_images/NHN Cloud_PrivateCA_overview_ko_900.png)
+![Private CA service structure](https://static.toastoven.net/prod_privateca/2025-12-23_ko/NHN%20Cloud_PrivateCA_overview_ko_900.png)
 
 ### Repository
 
@@ -53,8 +53,8 @@ Private CA service consists of the following components:
 * A collection of settings for issuing certificates quickly and consistently.
 * Allow you to easily issue multiple certificates with the same setup, which consists of two settings:
 
-  * **Set limits**: define restrictions when issuing certificates, such as validity periods, SAN options, and more.
-  * **Common applied settings**: define settings that you want to apply to certificates in common, such as key algorithm, key usage, extended key usage, and subject information.
+    * **Set limits**: define restrictions when issuing certificates, such as validity periods, SAN options, and more.
+    * **Common applied settings**: define settings that you want to apply to certificates in common, such as key algorithm, key usage, extended key usage, and subject information.
 
 ### Certificate
 

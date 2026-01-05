@@ -9,7 +9,7 @@ You can use the NHN Cloud Private CA API to manage certificates programmatically
 
 | Region | Endpoint |
 | --- | --- |
-| KR1 | https://pca.api.nhncloudservice.com |
+| KR1 | https://kr1-pca.api.nhncloudservice.com |
 
 ### API List
 
@@ -285,7 +285,7 @@ When encoding OCSP requests to Base64, they must be converted to a URL-safe form
 OCSP\_REQUEST=$(openssl ocsp -issuer ca.pem -cert cert.pem -reqout - | base64 -w 0)
 
 # Send URL-encoded requests
-curl -X GET "https://pca.api.nhncloudservice.com/v2.0/appkeys/my-appkey/cas/1/ocsp/${OCSP\_REQUEST}"
+curl -X GET "https://kr1-pca.api.nhncloudservice.com/v2.0/appkeys/my-appkey/cas/1/ocsp/${OCSP_REQUEST}"
 ```
 
 #### Response
@@ -334,7 +334,7 @@ OCSP requests (DER format)
 openssl ocsp -issuer ca.pem -cert cert.pem -reqout ocsp-request.der
 
 # Send OCSP requests
-curl -X POST "https://pca.api.nhncloudservice.com/v2.0/appkeys/my-appkey/cas/1/ocsp" \
+curl -X POST ""https://kr1-pca.api.nhncloudservice.com/v2.0/appkeys/my-appkey/cas/1/ocsp" \
     -H "Content-Type: application/ocsp-request" \
     --data-binary @ocsp-request.der \
     -o ocsp-response.der
