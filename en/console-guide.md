@@ -52,7 +52,7 @@ In the repository list, you can click the menu button (⋮) to the right of each
 - **Delete**: delete the repository.
     - When you delete a repository, all resources that belong to it (issuers, certificate templates, certificates, and ACME tokens) are deleted along with it.
 
-!!! DANGER "Caution"
+!!! danger "Caution"
     The delete operation is irreversible, so use caution.
 
 ### Repository details
@@ -313,7 +313,7 @@ At the top of the details page are the **+ Create New Certificate**, Modify**, a
 1. In the list of certificate templates, click **Delete** for the certificate template you want to delete, or on the details page, click **Delete**.
 2. In the confirmation dialog box, click **Delete** to confirm the deletion.
 
-!!! TIP "Notice"
+!!! tip "Notice"
 Deleting a certificate template does not affect certificates that have already been generated with that certificate template.
 
 ### Create certificates with certificate templates
