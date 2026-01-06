@@ -251,7 +251,7 @@ ACME 정보 하단에는 저장소 상세 정보가 표시됩니다.
     - SAN 옵션
         - **IP SANs 허용**: IP 주소를 SAN에 포함할 수 있도록 허용합니다.
         - **URI 주체 대체 이름(URI SANs)**: URI 형식의 SAN을 입력합니다.(예: https://example.com, spiffe://example.org)
-      - **기타 SANs**: 기타 형식의 SAN을 입력합니다.(예: 1.2.3.4;UTF8:test@example.com)
+        - **기타 SANs**: 기타 형식의 SAN을 입력합니다.(예: 1.2.3.4;UTF8:test@example.com)
 
     - 공통 반영 설정
         - 설정
