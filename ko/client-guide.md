@@ -283,17 +283,7 @@ acme.sh --register-account \
 
 계정 등록 후 인증서를 발급할 수 있습니다.
 
-**기본 발급 명령어**
-
-```bash
-acme.sh --issue \
-  -d example.com \
-  --server https://kr1-pca.api.nhncloudservice.com/acme/v2.0/cert/{certId}/directory \
-  --keylength 2048 \
-  --standalone
-```
-
-**여러 도메인(SAN) 포함**
+**기본 발급 명령어 예시**
 
 ```bash
 acme.sh --issue \
@@ -426,7 +416,7 @@ crontab -l | grep acme.sh
 일반적으로 다음과 같은 형태로 등록됩니다.
 
 ```
-0 0 * * * "/home/user/.acme.sh/acme.sh" --cron --home "/home/user/.acme.sh" > /dev/null
+0 0 * * * "/home/user/.acme.sh"/acme.sh --cron --home "/home/user/.acme.sh" > /dev/null
 ```
 
 ##### 수동 갱신
